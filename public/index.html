@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b4f5a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Water guide</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div class="brand">
+          <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+            <path
+              fill="#d7f4ef"
+              d="M24 4c.6 0 1.2.4 1.5 1C29 12.2 36 20.4 36 29a12 12 0 1 1-24 0c0-8.6 7-16.8 10.5-24 .3-.6.9-1 1.5-1z"
+            />
+            <path
+              fill="#2f7d57"
+              d="M33 30c1.2 2.4 4.6 3.2 6.2 1.4-2.2 2.8-1.2 6.6 1.4 8.2-3.8-.2-6.6 1.6-8.4 4.2-.6-3.4-3.6-5.2-6.6-4.6 2.2-2.4 2-5.8-.2-8.2 2.8.6 5.6-.2 7.6-1z"
+            />
+          </svg>
+          <div>
+            <h1>Water guide</h1>
+            <p>Water use and saving water, for class</p>
+          </div>
+        </div>
+        <button type="button" id="clear-chat" class="clear-btn">Clear chat</button>
+      </header>
+
+      <main id="transcript" class="transcript" aria-live="polite" aria-relevant="additions">
+        <article class="bubble bot" id="welcome">
+          <span class="who">Water guide</span>
+          <p>
+            Hi! Ask me about using water and saving water — at home, at school, or in Hong Kong.
+            You can also tell me a habit you already practise.
+          </p>
+          <p lang="zh-HK">
+            你好！你可以問我用水和節約用水的問題，也可以說說你的節水習慣。
+          </p>
+        </article>
+        <div id="turns"></div>
+      </main>
+
+      <div class="chips" id="chips">
+        <button type="button" class="chip" data-prompt="How can I save water at home?">
+          How can I save water at home?
+        </button>
+        <button type="button" class="chip" data-prompt="What uses a lot of water at school?">
+          What uses a lot of water at school?
+        </button>
+        <button type="button" class="chip" data-prompt="Where does Hong Kong get its water?">
+          Where does Hong Kong get its water?
+        </button>
+        <button type="button" class="chip" data-prompt="我想分享一個節水習慣">
+          我想分享一個節水習慣
+        </button>
+      </div>
+
+      <form id="composer" class="composer">
+        <label class="sr-only" for="message">Your message</label>
+        <textarea
+          id="message"
+          rows="1"
+          maxlength="2000"
+          enterkeyhint="send"
+          autocomplete="off"
+          placeholder="Ask about water, or share a habit…"
+        ></textarea>
+        <button type="submit" id="send" disabled>Send</button>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
